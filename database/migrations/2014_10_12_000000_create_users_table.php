@@ -20,7 +20,7 @@ return new class extends Migration
             $table->string('name', 100);
             $table->string('no_hp', 15)->unique();
             $table->string('alamat', 100);
-            $table->enum('is_pregnant', ['yes', 'no'])->default('no');
+            $table->tinyInteger('is_pregnant')->default(0);
 
             $table->rememberToken();
             $table->timestamps();
