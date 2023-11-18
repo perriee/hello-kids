@@ -13,13 +13,19 @@ return new class extends Migration
     {
         Schema::create('layanan_bumils', function (Blueprint $table) {
             $table->id();
-            $table->integer('usia_kandungan');
-            $table->dateTime('tanggal');
-            $table->integer('berat_badan');
-            $table->integer('tensi');
-            $table->integer('lingkar_lengan');
+            $table->unsignedBigInteger('user_id')->nullable();
+            $table->integer('usia_kandungan')->length(10);
+            $table->integer('berat_badan')->length(3);
+            $table->integer('tensi')->length(4);
+            $table->integer('lingkar_lengan')->length(3);
             $table->text('keluhan');
+
             $table->timestamps();
+
+            $table->foreign('user_id')
+                        ->references('id')
+                        ->on('users')
+                        ->onDelete('cascade');
         });
     }
 

@@ -14,18 +14,13 @@ return new class extends Migration
         Schema::create('users', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('admin_id')->nullable();
-            $table->string('username')->unique();
-            $table->string('password');
-            $table->string('nik')->unique();
-            $table->string('nama');
-            $table->string('no_hp')->unique();
-            $table->string('alamat');
-            $table->tinyInteger('is_pregnant')->default(0);
-
-            $table->foreign('admin_id')
-                        ->references('id')
-                        ->on('admins')
-                        ->onDelete('cascade');
+            $table->string('username', 30)->unique();
+            $table->string('password', 50);
+            $table->string('nik', 16)->unique();
+            $table->string('nama', 100);
+            $table->string('no_hp', 15)->unique();
+            $table->string('alamat', 100);
+            $table->enum('is_pregnant', ['yes', 'no'])->default('no');
 
             $table->rememberToken();
             $table->timestamps();

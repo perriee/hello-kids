@@ -13,17 +13,12 @@ return new class extends Migration
     {
         Schema::create('anaks', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('admin_id')->nullable();
             $table->unsignedBigInteger('user_id')->nullable();
-            $table->string('nama');
-            $table->integer('umur');
-            $table->enum('jenis_kelamin', ['laki-laki', 'perempuan']);
-            $table->timestamps();
+            $table->string('nama', 100);
+            $table->integer('umur')->length(3);
+            $table->enum('jenis_kelamin', ['L', 'P']);
 
-            $table->foreign('admin_id')
-                        ->references('id')
-                        ->on('admins')
-                        ->onDelete('cascade');
+            $table->timestamps();
 
             $table->foreign('user_id')
                         ->references('id')

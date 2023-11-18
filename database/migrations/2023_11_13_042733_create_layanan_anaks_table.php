@@ -13,11 +13,17 @@ return new class extends Migration
     {
         Schema::create('layanan_anaks', function (Blueprint $table) {
             $table->id();
-            $table->dateTime('tanggal');
-            $table->integer('lingkar_kepala');
-            $table->integer('tinggi_badan');
-            $table->integer('berat_badan');
+            $table->unsignedBigInteger('anak_id')->nullable();
+            $table->integer('lingkar_kepala')->length(3);
+            $table->integer('tinggi_badan')->length(3);
+            $table->integer('berat_badan')->length(3);
+
             $table->timestamps();
+
+            $table->foreign('anak_id')
+                        ->references('id')
+                        ->on('anaks')
+                        ->onDelete('cascade');
         });
     }
 

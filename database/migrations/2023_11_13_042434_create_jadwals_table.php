@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->unsignedBigInteger('admin_id')->nullable();
             $table->dateTime('tanggal');
+
             $table->timestamps();
 
             $table->foreign('admin_id')
