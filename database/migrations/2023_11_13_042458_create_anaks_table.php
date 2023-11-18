@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('anaks', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('user_id')->nullable();
-            $table->string('nama', 100);
+            $table->string('name', 100);
             $table->integer('umur')->length(3);
             $table->enum('jenis_kelamin', ['L', 'P']);
 

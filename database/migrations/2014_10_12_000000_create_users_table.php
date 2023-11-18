@@ -15,9 +15,9 @@ return new class extends Migration
             $table->id();
             $table->unsignedBigInteger('admin_id')->nullable();
             $table->string('username', 30)->unique();
-            $table->string('password', 50);
+            $table->string('password');
             $table->string('nik', 16)->unique();
-            $table->string('nama', 100);
+            $table->string('name', 100);
             $table->string('no_hp', 15)->unique();
             $table->string('alamat', 100);
             $table->enum('is_pregnant', ['yes', 'no'])->default('no');
