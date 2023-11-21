@@ -16,4 +16,11 @@ class EditUser extends EditRecord
             Actions\DeleteAction::make(),
         ];
     }
+
+    protected function getRedirectUrl(): string
+    {
+        $resource = static::getResource();
+
+        return $resource::getUrl('index');
+    }
 }
