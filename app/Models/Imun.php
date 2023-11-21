@@ -8,4 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class Imun extends Model
 {
     use HasFactory;
+
+    protected $fillable = [
+        'anak_id',
+        'jenis_imun_id',
+    ];
 }

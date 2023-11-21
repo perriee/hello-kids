@@ -8,4 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class JenisImun extends Model
 {
     use HasFactory;
+
+    protected $fillable = [
+        'nama_imun',
+        'deskripsi',
+    ];
 }
