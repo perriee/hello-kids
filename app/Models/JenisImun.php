@@ -13,4 +13,9 @@ class JenisImun extends Model
         'nama_imun',
         'deskripsi',
     ];
+
+    public function imun()
+    {
+        return $this->hasMany(Imun::class);
+    }
 }

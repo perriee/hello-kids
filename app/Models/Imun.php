@@ -13,4 +13,14 @@ class Imun extends Model
         'anak_id',
         'jenis_imun_id',
     ];
+
+    public function anak()
+    {
+        return $this->belongsTo(Anak::class);
+    }
+
+    public function jenis_imun()
+    {
+        return $this->belongsTo(JenisImun::class);
+    }
 }

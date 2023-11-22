@@ -50,4 +50,14 @@ class Admin extends Authenticatable implements FilamentUser
     {
         return true;
     }
+
+    public function jadwal()
+    {
+        return $this->hasMany(Jadwal::class);
+    }
+
+    public function user()
+    {
+        return $this->hasMany(User::class);
+    }
 }

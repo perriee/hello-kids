@@ -15,4 +15,19 @@ class Anak extends Model
         'umur',
         'jenis_kelamin',
     ];
+
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
+
+    public function imun()
+    {
+        return $this->hasMany(Imun::class);
+    }
+
+    public function layanan_anak()
+    {
+        return $this->hasMany(LayananAnak::class);
+    }
 }

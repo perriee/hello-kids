@@ -15,4 +15,9 @@ class LayananAnak extends Model
         'tinggi_badan',
         'berat_badan',
     ];
+
+    public function anak()
+    {
+        return $this->belongsTo(Anak::class);
+    }
 }

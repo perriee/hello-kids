@@ -17,4 +17,9 @@ class LayananBumil extends Model
         'lingkar_lengan',
         'keluhan',
     ];
+
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
 }
