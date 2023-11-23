@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class JenisImun extends Model
 {
@@ -14,7 +15,7 @@ class JenisImun extends Model
         'deskripsi',
     ];
 
-    public function imun()
+    public function imun(): HasMany
     {
         return $this->hasMany(Imun::class);
     }

@@ -25,10 +25,12 @@ class JenisImunResource extends Resource
             ->schema([
                 Forms\Components\TextInput::make('nama_imun')
                     ->required()
+                    ->placeholder('Masukkan Nama Imun')
                     ->maxLength(30)
                     ->columnSpan(1),
                 Forms\Components\Textarea::make('deskripsi')
                     ->required()
+                    ->placeholder('Masukkan Deskripsi Imun')
                     ->maxLength(65535)
                     ->columnSpan(1),
             ]);
@@ -39,9 +41,10 @@ class JenisImunResource extends Resource
         return $table
             ->columns([
                 Tables\Columns\TextColumn::make('nama_imun')
-                    ->label('Nama Imun')
+                    ->label('NAMA IMUN')
                     ->searchable(),
                 Tables\Columns\TextColumn::make('deskripsi')
+                    ->label('DESKRIPSI')
                     ->searchable()
                     ->limit(50),
                 Tables\Columns\TextColumn::make('created_at')

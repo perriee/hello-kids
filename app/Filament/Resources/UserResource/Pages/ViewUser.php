@@ -9,4 +9,13 @@ use Filament\Resources\Pages\ViewRecord;
 class ViewUser extends ViewRecord
 {
     protected static string $resource = UserResource::class;
+
+    protected function mutateFormDataBeforeFill(array $data): array
+    {
+        // $data['user_id'] = auth()->id();
+
+        dd($data);
+
+        return $data;
+    }
 }

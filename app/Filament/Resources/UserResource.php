@@ -26,29 +26,38 @@ class UserResource extends Resource
             ->schema([
                 Forms\Components\TextInput::make('email')
                     ->email()
+                    ->placeholder('Masukkan Email')
                     ->required()
                     ->maxLength(100),
                 Forms\Components\TextInput::make('password')
                     ->password()
+                    ->placeholder('Masukkan Password')
                     ->required()
                     ->maxLength(255)
                     ->visibleOn('create'),
                 Forms\Components\TextInput::make('nik')
                     ->label('NIK')
+                    ->placeholder('Masukkan NIK')
                     ->required()
+                    ->numeric()
                     ->maxLength(16),
                 Forms\Components\TextInput::make('name')
                     ->label('Nama')
+                    ->placeholder('Masukkan Nama')
                     ->required()
                     ->maxLength(100),
                 Forms\Components\TextInput::make('no_hp')
                     ->label('No Hp')
+                    ->placeholder('Masukkan Nomor HP')
                     ->required()
+                    ->numeric()
                     ->maxLength(15),
                 Forms\Components\TextInput::make('alamat')
                     ->required()
+                    ->placeholder('Masukkan Alamat')
                     ->maxLength(100),
                 Forms\Components\Toggle::make('is_pregnant')
+                    ->label('Apakah sedang hamil?')
                     ->required(),
             ]);
     }
@@ -57,17 +66,20 @@ class UserResource extends Resource
     {
         return $table
             ->columns([
+                Tables\Columns\TextColumn::make('id')
+                    ->label('ID')
+                    ->searchable(),
                 Tables\Columns\TextColumn::make('nik')
                     ->label('NIK')
                     ->searchable(),
                 Tables\Columns\TextColumn::make('name')
-                    ->label('Nama')
+                    ->label('NAMA')
                     ->searchable(),
                 Tables\Columns\TextColumn::make('no_hp')
-                    ->label('No Hp')
+                    ->label('NO HP')
                     ->searchable(),
                 Tables\Columns\IconColumn::make('is_pregnant')
-                    ->label('Hamil')
+                    ->label('HAMIL')
                     ->boolean(),
                 Tables\Columns\TextColumn::make('created_at')
                     ->dateTime()

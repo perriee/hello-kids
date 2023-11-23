@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class LayananAnak extends Model
 {
@@ -16,7 +17,7 @@ class LayananAnak extends Model
         'berat_badan',
     ];
 
-    public function anak()
+    public function anak(): BelongsTo
     {
         return $this->belongsTo(Anak::class);
     }

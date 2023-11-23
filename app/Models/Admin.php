@@ -7,6 +7,7 @@ namespace App\Models;
 use Filament\Models\Contracts\FilamentUser;
 use Filament\Panel;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
@@ -51,12 +52,12 @@ class Admin extends Authenticatable implements FilamentUser
         return true;
     }
 
-    public function jadwal()
+    public function jadwal(): HasMany
     {
         return $this->hasMany(Jadwal::class);
     }
 
-    public function user()
+    public function user(): HasMany
     {
         return $this->hasMany(User::class);
     }

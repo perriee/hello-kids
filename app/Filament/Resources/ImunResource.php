@@ -2,9 +2,9 @@
 
 namespace App\Filament\Resources;
 
-use App\Filament\Resources\JadwalResource\Pages;
-use App\Filament\Resources\JadwalResource\RelationManagers;
-use App\Models\Jadwal;
+use App\Filament\Resources\ImunResource\Pages;
+use App\Filament\Resources\ImunResource\RelationManagers;
+use App\Models\Imun;
 use Filament\Forms;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
@@ -13,22 +13,30 @@ use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 
-class JadwalResource extends Resource
+class ImunResource extends Resource
 {
-    protected static ?string $model = Jadwal::class;
+    protected static ?string $model = Imun::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-calendar-days';
+    protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
 
     public static function form(Form $form): Form
     {
         return $form
             ->schema([
-                Forms\Components\DateTimePicker::make('tanggal')
-                    ->required()
+                Forms\Components\Select::make('anak_id')
+                    ->relationship('anak', 'name')
+                    ->label('Nama Anak')
+                    ->searchable()
+                    ->preload()
                     ->native(false)
-                    ->seconds(false)
-                    ->placeholder('Masukkan Tanggal')
-                    ->firstDayOfWeek(7),
+                    ->required(),
+                Forms\Components\Select::make('jenis_imun_id')
+                    ->relationship('jenis_imun', 'nama_imun')
+                    ->label('Jenis Imun')
+                    ->searchable()
+                    ->preload()
+                    ->native(false)
+                    ->required(),
             ]);
     }
 
@@ -36,14 +44,19 @@ class JadwalResource extends Resource
     {
         return $table
             ->columns([
-                Tables\Columns\TextColumn::make('tanggal')
-                    ->label('TANGGAL')
-                    ->dateTime()
+                Tables\Columns\TextColumn::make('anak.name')
+                    ->label('NAMA ANAK')
+                    ->searchable()
+                    ->sortable(),
+                Tables\Columns\TextColumn::make('jenis_imun.nama_imun')
+                    ->label('JENIS IMUN')
+                    ->searchable()
+                    ->numeric()
                     ->sortable(),
                 Tables\Columns\TextColumn::make('created_at')
+                    ->label('TANGGAL IMUN')
                     ->dateTime()
-                    ->sortable()
-                    ->toggleable(isToggledHiddenByDefault: true),
+                    ->sortable(),
                 Tables\Columns\TextColumn::make('updated_at')
                     ->dateTime()
                     ->sortable()
@@ -73,9 +86,9 @@ class JadwalResource extends Resource
     public static function getPages(): array
     {
         return [
-            'index' => Pages\ListJadwals::route('/'),
-            'create' => Pages\CreateJadwal::route('/create'),
-            'edit' => Pages\EditJadwal::route('/{record}/edit'),
+            'index' => Pages\ListImuns::route('/'),
+            'create' => Pages\CreateImun::route('/create'),
+            'edit' => Pages\EditImun::route('/{record}/edit'),
         ];
     }
 }

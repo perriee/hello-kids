@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class Imun extends Model
 {
@@ -14,12 +15,12 @@ class Imun extends Model
         'jenis_imun_id',
     ];
 
-    public function anak()
+    public function anak(): BelongsTo
     {
         return $this->belongsTo(Anak::class);
     }
 
-    public function jenis_imun()
+    public function jenis_imun(): BelongsTo
     {
         return $this->belongsTo(JenisImun::class);
     }
