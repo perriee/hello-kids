@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.global')
 
 @section('content')
     {{-- Hero Start --}}

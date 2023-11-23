@@ -3,14 +3,14 @@
 
 <head>
 
-    @include('layouts.partials.head')
+    @include('layouts.global_partials.head')
 
 </head>
 
 <body class="font-inter">
 
     <header class="sticky top-0 z-50">
-        @include('layouts.partials.navbar')
+        @include('layouts.global_partials.navbar')
     </header>
 
     <main>
@@ -18,7 +18,7 @@
     </main>
 
     <footer>
-        @include('layouts.partials.footer')
+        @include('layouts.global_partials.footer')
     </footer>
 
 </body>
