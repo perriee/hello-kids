@@ -10,10 +10,12 @@ class ListLayananAnaks extends ListRecords
 {
     protected static string $resource = LayananAnakResource::class;
 
+    protected static ?string $title = 'Data Layanan Anak';
+
     protected function getHeaderActions(): array
     {
         return [
-            Actions\CreateAction::make(),
+            Actions\CreateAction::make()->label('Tambah'),
         ];
     }
 }

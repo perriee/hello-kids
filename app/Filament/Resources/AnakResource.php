@@ -8,6 +8,7 @@ use App\Models\Anak;
 use Filament\Forms;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
+use Filament\Support\Enums\Alignment;
 use Filament\Tables;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
@@ -17,7 +18,13 @@ class AnakResource extends Resource
 {
     protected static ?string $model = Anak::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-user';
+    protected static ?int $navigationSort = 2;
+
+    protected static ?string $navigationGroup = 'User Management';
+
+    protected static ?string $navigationLabel = 'Anak';
+
+    protected static ?string $navigationIcon = 'heroicon-s-user';
 
     public static function form(Form $form): Form
     {
@@ -56,16 +63,18 @@ class AnakResource extends Resource
         return $table
             ->columns([
                 Tables\Columns\TextColumn::make('user.name')
-                    ->label('NAMA IBU')
+                    ->label('Nama Ibu')
                     ->searchable(),
                 Tables\Columns\TextColumn::make('name')
-                    ->label('NAMA ANAK')
+                    ->label('Nama Anak')
                     ->searchable(),
                 Tables\Columns\TextColumn::make('umur')
-                    ->label('UMUR/TAHUN'),
+                    ->label('Umur/Tahun')
+                    ->alignCenter(),
                 Tables\Columns\TextColumn::make('jenis_kelamin')
-                    ->label('JENIS KELAMIN')
-                    ->searchable(),
+                    ->label('Jenis Kelamin')
+                    ->searchable()
+                    ->alignCenter(),
             ])
             ->filters([
                 //

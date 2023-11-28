@@ -1,25 +1,14 @@
 <x-app-layout>
 
-    <x-slot name="header">
-        <h2 class="text-xl font-semibold leading-tight text-gray-800">
-            {{ __('Dashboard') }}
-        </h2>
-    </x-slot>
+    <div class="px-20 bg-red-200">
 
-    <div class="py-12">
-        <div class="mx-auto max-w-7xl sm:px-6 lg:px-8">
-            <div class="overflow-hidden bg-white shadow-sm sm:rounded-lg">
-                <div class="p-6 text-gray-900">
-                    {{ __("You're logged in!") }}
-                </div>
-            </div>
+        <div class="p-6 mx-auto mt-10 bg-slate-300 rounded-xl">
+            <span class="text-2xl">Selamat Datang, Bu {{ Auth::user()->name }}.</span>
         </div>
 
-        <div class="max-w-2xl p-6 mx-auto mt-10 bg-slate-300 rounded-xl">
-            Selamat Datang, {{ Auth::user()->name }}.
-        </div>
 
-        @if (Auth::user()->is_pregnant === 1)
+
+        {{-- @if (Auth::user()->is_pregnant === 1)
             <div class="max-w-2xl p-6 mx-auto mt-10 bg-slate-300 rounded-xl">
                 Anda sedang hamil
             </div>
@@ -27,14 +16,18 @@
             <div class="max-w-2xl p-6 mx-auto mt-10 bg-slate-300 rounded-xl">
                 Anda sedang tidak hamil
             </div>
-        @endif
+        @endif --}}
 
-        <div class="max-w-2xl p-6 mx-auto mt-10 bg-slate-300 rounded-xl">
+
+
+        {{-- <div class="max-w-2xl p-6 mx-auto mt-10 bg-slate-300 rounded-xl">
             <div>Daftar Anak Anda:</div>
-            {{-- @foreach ($collection as $item)
-
-            @endforeach --}}
-        </div>
+            @foreach ($data_anak as $row)
+                <p>Nama: {{ $row->name }}</p>
+                <p>Umur: {{ $row->umur }}</p>
+                <p>Jenis Kelamin: {{ $row->jenis_kelamin }}</p>
+            @endforeach
+        </div> --}}
 
     </div>
 

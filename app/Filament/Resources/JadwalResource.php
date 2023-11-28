@@ -17,7 +17,9 @@ class JadwalResource extends Resource
 {
     protected static ?string $model = Jadwal::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-calendar-days';
+    protected static ?string $navigationLabel = 'Jadwal';
+
+    protected static ?string $navigationIcon = 'heroicon-s-calendar-days';
 
     public static function form(Form $form): Form
     {
@@ -37,7 +39,7 @@ class JadwalResource extends Resource
         return $table
             ->columns([
                 Tables\Columns\TextColumn::make('tanggal')
-                    ->label('TANGGAL')
+                    ->label('Tanggal')
                     ->dateTime()
                     ->sortable(),
                 Tables\Columns\TextColumn::make('created_at')

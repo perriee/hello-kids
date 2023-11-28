@@ -17,7 +17,13 @@ class LayananAnakResource extends Resource
 {
     protected static ?string $model = LayananAnak::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
+    protected static ?int $navigationSort = 2;
+
+    protected static ?string $navigationGroup = 'Layanan';
+
+    protected static ?string $navigationLabel = 'Anak';
+
+    protected static ?string $navigationIcon = 'heroicon-s-user';
 
     public static function form(Form $form): Form
     {
@@ -26,17 +32,24 @@ class LayananAnakResource extends Resource
                 Forms\Components\Select::make('anak_id')
                     ->relationship('anak', 'name')
                     ->label('Nama Anak')
+                    ->placeholder('Pilih Anak')
                     ->searchable()
                     ->preload()
                     ->native(false)
                     ->required(),
                 Forms\Components\TextInput::make('lingkar_kepala')
+                    ->label('Lingkar (cm)')
+                    ->placeholder('Masukkan Lingkar Kepala')
                     ->required()
                     ->numeric(),
                 Forms\Components\TextInput::make('tinggi_badan')
+                ->label('Tinggi Badan (cm)')
+                    ->placeholder('Masukkan Tinggi Badan')
                     ->required()
                     ->numeric(),
                 Forms\Components\TextInput::make('berat_badan')
+                ->label('Berat Badan (kg)')
+                    ->placeholder('Masukkan Berat Badan')
                     ->required()
                     ->numeric(),
             ]);
@@ -47,23 +60,26 @@ class LayananAnakResource extends Resource
         return $table
             ->columns([
                 Tables\Columns\TextColumn::make('anak.name')
-                    ->label('NAMA ANAK')
+                    ->label('Nama Anak')
                     ->searchable()
                     ->sortable(),
                 Tables\Columns\TextColumn::make('lingkar_kepala')
-                    ->label('LINGKAR KEPALA')
+                    ->label('Lingkar Kepala (cm)')
+                    ->alignCenter()
                     ->numeric()
                     ->sortable(),
                 Tables\Columns\TextColumn::make('tinggi_badan')
-                    ->label('TINGGI BADAN')
+                    ->label('Tinggi Badan (cm)')
+                    ->alignCenter()
                     ->numeric()
                     ->sortable(),
                 Tables\Columns\TextColumn::make('berat_badan')
-                    ->label('BERAT BADAN')
+                    ->label('Berat Badan (kg)')
+                    ->alignCenter()
                     ->numeric()
                     ->sortable(),
                 Tables\Columns\TextColumn::make('created_at')
-                    ->label('TANGGAL LAYANAN')
+                    ->label('Tangal Layanan')
                     ->dateTime()
                     ->sortable(),
                 Tables\Columns\TextColumn::make('updated_at')

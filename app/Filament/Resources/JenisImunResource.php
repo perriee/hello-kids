@@ -17,7 +17,9 @@ class JenisImunResource extends Resource
 {
     protected static ?string $model = JenisImun::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
+    protected static ?string $navigationLabel = 'Jenis Imun';
+
+    protected static ?string $navigationIcon = 'heroicon-s-circle-stack';
 
     public static function form(Form $form): Form
     {
@@ -41,10 +43,10 @@ class JenisImunResource extends Resource
         return $table
             ->columns([
                 Tables\Columns\TextColumn::make('nama_imun')
-                    ->label('NAMA IMUN')
+                    ->label('Nama Imun')
                     ->searchable(),
                 Tables\Columns\TextColumn::make('deskripsi')
-                    ->label('DESKRIPSI')
+                    ->label('Deskripsi')
                     ->searchable()
                     ->limit(50),
                 Tables\Columns\TextColumn::make('created_at')

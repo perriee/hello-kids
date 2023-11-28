@@ -5,7 +5,7 @@
                 <span class="text-2xl font-bold text-primary">Hello Kids</span>
             </div>
         </a>
-        <div class="flex items-center justify-center gap-10 text-lg font-bold text-primary">
+        <div class="flex items-center justify-center gap-10 text-lg font-semibold text-primary">
             <div><a href="#hero">Beranda</a></div>
             <div><a href="#tentang-kami">Tentang Kami</a></div>
             <div><a href="#agenda">Agenda</a></div>

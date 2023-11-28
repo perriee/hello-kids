@@ -17,7 +17,13 @@ class ImunResource extends Resource
 {
     protected static ?string $model = Imun::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
+    protected static ?int $navigationSort = 3;
+
+    protected static ?string $navigationGroup = 'Layanan';
+
+    protected static ?string $navigationLabel = 'Imun';
+
+    protected static ?string $navigationIcon = 'heroicon-s-circle-stack';
 
     public static function form(Form $form): Form
     {
@@ -26,6 +32,7 @@ class ImunResource extends Resource
                 Forms\Components\Select::make('anak_id')
                     ->relationship('anak', 'name')
                     ->label('Nama Anak')
+                    ->placeholder('Pilih Anak')
                     ->searchable()
                     ->preload()
                     ->native(false)
@@ -33,6 +40,7 @@ class ImunResource extends Resource
                 Forms\Components\Select::make('jenis_imun_id')
                     ->relationship('jenis_imun', 'nama_imun')
                     ->label('Jenis Imun')
+                    ->placeholder('Pilih Jenis Imun')
                     ->searchable()
                     ->preload()
                     ->native(false)
@@ -45,16 +53,16 @@ class ImunResource extends Resource
         return $table
             ->columns([
                 Tables\Columns\TextColumn::make('anak.name')
-                    ->label('NAMA ANAK')
+                    ->label('Nama Anak')
                     ->searchable()
                     ->sortable(),
                 Tables\Columns\TextColumn::make('jenis_imun.nama_imun')
-                    ->label('JENIS IMUN')
+                    ->label('Jenis Imun')
                     ->searchable()
                     ->numeric()
                     ->sortable(),
                 Tables\Columns\TextColumn::make('created_at')
-                    ->label('TANGGAL IMUN')
+                    ->label('Tanggal Imun')
                     ->dateTime()
                     ->sortable(),
                 Tables\Columns\TextColumn::make('updated_at')

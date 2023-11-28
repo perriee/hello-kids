@@ -13,12 +13,20 @@ use Filament\Infolists;
 use Filament\Infolists\Infolist;
 use Filament\Infolists\Components\Section;
 use Filament\Support\Enums\FontWeight;
+use Filament\Tables\Filters\Filter;
+use Illuminate\Database\Eloquent\Builder;
 
 class UserResource extends Resource
 {
     protected static ?string $model = User::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-users';
+    protected static ?int $navigationSort = 1;
+
+    protected static ?string $navigationGroup = 'User Management';
+
+    protected static ?string $navigationLabel = 'Ibu';
+
+    protected static ?string $navigationIcon = 'heroicon-s-user-group';
 
     public static function form(Form $form): Form
     {
@@ -73,13 +81,14 @@ class UserResource extends Resource
                     ->label('NIK')
                     ->searchable(),
                 Tables\Columns\TextColumn::make('name')
-                    ->label('NAMA')
+                    ->label('Nama')
                     ->searchable(),
                 Tables\Columns\TextColumn::make('no_hp')
-                    ->label('NO HP')
+                    ->label('No HP')
                     ->searchable(),
                 Tables\Columns\IconColumn::make('is_pregnant')
-                    ->label('HAMIL')
+                    ->label('Sedang Hamil')
+                    ->alignCenter()
                     ->boolean(),
                 Tables\Columns\TextColumn::make('created_at')
                     ->dateTime()
@@ -91,7 +100,10 @@ class UserResource extends Resource
                     ->toggleable(isToggledHiddenByDefault: true),
             ])
             ->filters([
-                //
+                Filter::make('is_pregnant')
+                    ->label('Sedang Hamil')
+                    ->toggle()
+                    ->query(fn (Builder $query): Builder => $query->where('is_pregnant', 1))
             ])
             ->actions([
                 Tables\Actions\ViewAction::make(),
@@ -138,7 +150,7 @@ class UserResource extends Resource
                             ->label('Hamil')
                             ->boolean(),
                         Infolists\Components\TextEntry::make('no_hp')
-                    ])
+                    ])->columns(2)
             ]);
     }
 }

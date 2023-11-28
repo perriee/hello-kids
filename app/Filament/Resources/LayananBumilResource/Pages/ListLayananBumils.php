@@ -10,10 +10,12 @@ class ListLayananBumils extends ListRecords
 {
     protected static string $resource = LayananBumilResource::class;
 
+    protected static ?string $title = 'Data Layanan Ibu Hamil';
+
     protected function getHeaderActions(): array
     {
         return [
-            Actions\CreateAction::make(),
+            Actions\CreateAction::make()->label('Tambah'),
         ];
     }
 }

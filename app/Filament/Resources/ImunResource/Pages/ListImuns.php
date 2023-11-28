@@ -10,10 +10,12 @@ class ListImuns extends ListRecords
 {
     protected static string $resource = ImunResource::class;
 
+    protected static ?string $title = 'Data Imun';
+
     protected function getHeaderActions(): array
     {
         return [
-            Actions\CreateAction::make(),
+            Actions\CreateAction::make()->label('Tambah'),
         ];
     }
 }

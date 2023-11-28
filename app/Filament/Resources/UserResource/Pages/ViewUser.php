@@ -10,12 +10,12 @@ class ViewUser extends ViewRecord
 {
     protected static string $resource = UserResource::class;
 
-    protected function mutateFormDataBeforeFill(array $data): array
+    protected static ?string $title = 'Detail User';
+
+    protected function getHeaderActions(): array
     {
-        // $data['user_id'] = auth()->id();
-
-        dd($data);
-
-        return $data;
+        return [
+            Actions\EditAction::make(),
+        ];
     }
 }

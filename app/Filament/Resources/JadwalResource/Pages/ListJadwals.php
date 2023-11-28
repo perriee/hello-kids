@@ -10,10 +10,12 @@ class ListJadwals extends ListRecords
 {
     protected static string $resource = JadwalResource::class;
 
+    protected static ?string $title = 'Data Jadwal';
+
     protected function getHeaderActions(): array
     {
         return [
-            Actions\CreateAction::make(),
+            Actions\CreateAction::make()->label('Tambah'),
         ];
     }
 }

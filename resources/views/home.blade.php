@@ -7,7 +7,7 @@
             <img src="{{ url('/img/circle.png') }}" alt="" class="w-[70%]">
         </div>
         <div class="z-10 flex flex-col w-1/2 gap-2">
-            <div class="text-5xl font-bold text-slate-700">Selamat Datang di <span class="text-primary">Hello Kids</span>
+            <div class="font-bold text-[2.8rem] text-slate-700">Selamat Datang di <span class="text-primary">Hello Kids</span>
             </div>
             <div class="text-4xl font-semibold text-slate-500">Yogyakarta</div>
         </div>
@@ -23,7 +23,8 @@
         <div class="flex items-center">
             <div class="flex justify-end w-1/3"><img src="{{ url('/img/posyandu.webp') }}" alt=""
                     class="w-[30rem] rounded-xl shadow-2xl"></div>
-            <div class="w-2/3 p-16 text-xl leading-10 text-slate-500">Pelaksanaan Posyandu rutin dilakukan setiap bulan. Pengurus
+            <div class="w-2/3 p-16 text-xl leading-10 text-slate-500">Pelaksanaan Posyandu rutin dilakukan setiap bulan.
+                Pengurus
                 posyandu
                 terdiri
                 dari 15 orang yang berasal
@@ -38,7 +39,8 @@
     <section id="agenda" class="flex flex-col px-40 pt-10 pb-20">
         <div class="pb-10 text-4xl font-semibold text-center text-primary">Agenda</div>
         <div class="flex items-center">
-            <div class="w-2/3 text-xl leading-10 text-slate-500">Pelaksanaan Posyandu rutin dilakukan setiap bulan. Pengurus posyandu
+            <div class="w-2/3 text-xl leading-10 text-slate-500">Pelaksanaan Posyandu rutin dilakukan setiap bulan. Pengurus
+                posyandu
                 terdiri
                 dari 15 orang yang berasal
                 dari anggota PKK. Kader tersebut dilatih setiap bulannya oleh pihak Puskesmas. Pelaksanaan Posyandu rutin

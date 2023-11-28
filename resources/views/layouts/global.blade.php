@@ -7,7 +7,7 @@
 
 </head>
 
-<body class="font-inter">
+<body class="font-poppins">
 
     <header class="sticky top-0 z-50">
         @include('layouts.global_partials.navbar')

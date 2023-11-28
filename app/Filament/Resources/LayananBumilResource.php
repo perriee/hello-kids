@@ -17,7 +17,13 @@ class LayananBumilResource extends Resource
 {
     protected static ?string $model = LayananBumil::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
+    protected static ?int $navigationSort = 1;
+
+    protected static ?string $navigationGroup = 'Layanan';
+
+    protected static ?string $navigationLabel = 'Ibu Hamil';
+
+    protected static ?string $navigationIcon = 'heroicon-s-user-group';
 
     public static function form(Form $form): Form
     {
@@ -34,18 +40,26 @@ class LayananBumilResource extends Resource
                     ->native(false)
                     ->required(),
                 Forms\Components\TextInput::make('usia_kandungan')
+                    ->label('Usia Kandungan (bulan)')
+                    ->placeholder('Masukkan Usia Kandungan')
                     ->required()
                     ->numeric(),
                 Forms\Components\TextInput::make('berat_badan')
+                    ->label('Berat Badan (kg)')
+                    ->placeholder('Masukkan Berat Badan')
                     ->required()
                     ->numeric(),
                 Forms\Components\TextInput::make('tensi')
+                    ->placeholder('Masukkan Tensi')
                     ->required()
                     ->numeric(),
                 Forms\Components\TextInput::make('lingkar_lengan')
+                    ->label('Lingkar Lengan (cm)')
+                    ->placeholder('Masukkan Lingkar Lengan')
                     ->required()
                     ->numeric(),
                 Forms\Components\Textarea::make('keluhan')
+                    ->placeholder('Masukkan Keluhan')
                     ->required()
                     ->maxLength(65535)
                     ->columnSpanFull(),
@@ -57,26 +71,30 @@ class LayananBumilResource extends Resource
         return $table
             ->columns([
                 Tables\Columns\TextColumn::make('user.name')
-                    ->label('NAMA IBU')
+                    ->label('Nama Ibu')
                     ->sortable(),
                 Tables\Columns\TextColumn::make('usia_kandungan')
-                    ->label('USIA KANDUNGAN')
+                    ->label('Usia Kandungan (bulan)')
+                    ->alignCenter()
                     ->numeric()
                     ->sortable(),
                 Tables\Columns\TextColumn::make('berat_badan')
-                    ->label('BERAT BADAN')
+                    ->label('Berat Badan (kg)')
+                    ->alignCenter()
                     ->numeric()
                     ->sortable(),
                 Tables\Columns\TextColumn::make('tensi')
-                    ->label('TENSI')
+                    ->label('Tensi')
+                    ->alignCenter()
                     ->numeric()
                     ->sortable(),
                 Tables\Columns\TextColumn::make('lingkar_lengan')
-                    ->label('LINGKAR LENGAN')
+                    ->label('Lingkar Lengan (cm)')
+                    ->alignCenter()
                     ->numeric()
                     ->sortable(),
                 Tables\Columns\TextColumn::make('created_at')
-                    ->label('TANGGAL LAYANAN')
+                    ->label('Tanggal Layanan')
                     ->dateTime()
                     ->sortable(),
                 Tables\Columns\TextColumn::make('updated_at')

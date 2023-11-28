@@ -10,10 +10,12 @@ class ListJenisImuns extends ListRecords
 {
     protected static string $resource = JenisImunResource::class;
 
+    protected static ?string $title = 'Data Jenis Imun';
+
     protected function getHeaderActions(): array
     {
         return [
-            Actions\CreateAction::make(),
+            Actions\CreateAction::make()->label('Tambah'),
         ];
     }
 }
