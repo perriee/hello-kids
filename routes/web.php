@@ -25,4 +25,11 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
+Route::prefix('user')->group(function () {
+    Route::get('/anak', [UserController::class, 'viewAnak'])->name('user.anak');
+    Route::get('/hamil', [UserController::class, 'viewHamil'])->name('user.hamil');
+    Route::get('/imun', [UserController::class, 'viewImun'])->name('user.imun');
+    Route::get('/jadwal', [UserController::class, 'viewJadwal'])->name('user.jadwal');
+});
+
 require __DIR__ . '/auth.php';
