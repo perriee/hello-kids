@@ -1,5 +1,7 @@
 <x-app-layout>
 
+    @section('title', 'Dashboard')
+
     <div class="px-32">
 
         <div class="mx-auto mt-20 rounded-xl">

@@ -31,6 +31,8 @@ class UserController extends Controller
 
         $anaks = $data_user->anak;
 
+        $anakData = [];
+
         foreach ($anaks as $anak) {
             $id_anak = $anak->id;
 
