@@ -103,7 +103,7 @@ class LayananAnakResource extends Resource
             ->emptyStateDescription('')
             ->emptyStateActions([
                 Tables\Actions\Action::make('create')
-                    ->label('Tambah Jadwal')
+                    ->label('Tambah Layanan Anak')
                     ->url(route('filament.admin.resources.layanan-anaks.create'))
                     ->icon('heroicon-m-plus')
                     ->button(),

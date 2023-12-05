@@ -92,7 +92,7 @@ class AnakResource extends Resource
             ->emptyStateDescription('')
             ->emptyStateActions([
                 Tables\Actions\Action::make('create')
-                    ->label('Tambah Jadwal')
+                    ->label('Tambah Anak')
                     ->url(route('filament.admin.resources.anaks.create'))
                     ->icon('heroicon-m-plus')
                     ->button(),

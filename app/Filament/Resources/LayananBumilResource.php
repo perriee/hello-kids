@@ -119,7 +119,7 @@ class LayananBumilResource extends Resource
             ->emptyStateDescription('')
             ->emptyStateActions([
                 Tables\Actions\Action::make('create')
-                    ->label('Tambah Jadwal')
+                    ->label('Tambah Layanan Ibu Hamil')
                     ->url(route('filament.admin.resources.layanan-bumils.create'))
                     ->icon('heroicon-m-plus')
                     ->button(),

@@ -119,7 +119,7 @@ class UserResource extends Resource
             ->emptyStateDescription('')
             ->emptyStateActions([
                 Tables\Actions\Action::make('create')
-                    ->label('Tambah Jadwal')
+                    ->label('Tambah Ibu')
                     ->url(route('filament.admin.resources.users.create'))
                     ->icon('heroicon-m-plus')
                     ->button(),

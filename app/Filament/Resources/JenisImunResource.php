@@ -75,7 +75,7 @@ class JenisImunResource extends Resource
             ->emptyStateDescription('')
             ->emptyStateActions([
                 Tables\Actions\Action::make('create')
-                    ->label('Tambah Jadwal')
+                    ->label('Tambah Jenis Imunisasi')
                     ->url(route('filament.admin.resources.jenis-imuns.create'))
                     ->icon('heroicon-m-plus')
                     ->button(),

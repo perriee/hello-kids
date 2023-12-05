@@ -86,7 +86,7 @@ class ImunResource extends Resource
             ->emptyStateDescription('')
             ->emptyStateActions([
                 Tables\Actions\Action::make('create')
-                    ->label('Tambah Jadwal')
+                    ->label('Tambah Imunisasi')
                     ->url(route('filament.admin.resources.imuns.create'))
                     ->icon('heroicon-m-plus')
                     ->button(),
