@@ -10,12 +10,7 @@ class CreateAnak extends CreateRecord
 {
     protected static string $resource = AnakResource::class;
 
-    // protected function mutateFormDataBeforeCreate(array $data): array
-    // {
-    //     dd($data);
-
-    //     return $data;
-    // }
+    protected static ?string $title = 'Tambah Anak';
 
     protected function getRedirectUrl(): string
     {

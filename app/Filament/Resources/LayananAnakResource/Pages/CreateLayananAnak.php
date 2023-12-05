@@ -10,12 +10,7 @@ class CreateLayananAnak extends CreateRecord
 {
     protected static string $resource = LayananAnakResource::class;
 
-    // protected function mutateFormDataBeforeCreate(array $data): array
-    // {
-    //     dd($data);
-
-    //     return $data;
-    // }
+    protected static ?string $title = 'Tambah Layanan Anak';
 
     protected function getRedirectUrl(): string
     {

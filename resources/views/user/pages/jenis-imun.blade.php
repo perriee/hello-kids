@@ -24,6 +24,7 @@
                                 @php
                                     $no = 1;
                                 @endphp
+
                                 @if (!$jenis_imun)
                                     <tr>
                                         <td colspan="3" class="p-6 italic text-center">Data Tidak Tersedia</td>

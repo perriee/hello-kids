@@ -10,7 +10,7 @@ class CreateLayananBumil extends CreateRecord
 {
     protected static string $resource = LayananBumilResource::class;
 
-    protected static ?string $title = 'Buat Layanan Ibu Hamil';
+    protected static ?string $title = 'Tambah Layanan Ibu Hamil';
 
     protected function getRedirectUrl(): string
     {

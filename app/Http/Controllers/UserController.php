@@ -60,7 +60,7 @@ class UserController extends Controller
 
     public function viewImun()
     {
-        $page_title = 'Data Jenis Imun';
+        $page_title = 'Data Jenis Imunisasi';
 
         $jenis_imun = JenisImun::all();
 

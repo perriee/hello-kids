@@ -11,6 +11,8 @@ class CreateJadwal extends CreateRecord
 {
     protected static string $resource = JadwalResource::class;
 
+    protected static ?string $title = 'Tambah Jadwal';
+
     protected function mutateFormDataBeforeCreate(array $data): array
     {
         $data['admin_id'] = Auth::user('admin')->id;

@@ -10,7 +10,7 @@ class CreateImun extends CreateRecord
 {
     protected static string $resource = ImunResource::class;
 
-    protected static ?string $title = 'Buat Imunisasi';
+    protected static ?string $title = 'Tambah Imunisasi';
 
     protected function getRedirectUrl(): string
     {
