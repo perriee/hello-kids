@@ -10,7 +10,7 @@ class ListImuns extends ListRecords
 {
     protected static string $resource = ImunResource::class;
 
-    protected static ?string $title = 'Data Imun';
+    protected static ?string $title = 'Data Imunisasi';
 
     protected function getHeaderActions(): array
     {

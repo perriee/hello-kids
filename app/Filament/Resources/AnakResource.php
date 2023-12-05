@@ -24,7 +24,7 @@ class AnakResource extends Resource
 
     protected static ?string $navigationLabel = 'Anak';
 
-    protected static ?string $navigationIcon = 'heroicon-s-user';
+    protected static ?string $navigationIcon = 'heroicon-s-user-group';
 
     public static function form(Form $form): Form
     {
@@ -69,7 +69,7 @@ class AnakResource extends Resource
                     ->label('Nama Anak')
                     ->searchable(),
                 Tables\Columns\TextColumn::make('umur')
-                    ->label('Umur/Tahun')
+                    ->label('Umur (tahun)')
                     ->alignCenter(),
                 Tables\Columns\TextColumn::make('jenis_kelamin')
                     ->label('Jenis Kelamin')
@@ -87,6 +87,15 @@ class AnakResource extends Resource
                 Tables\Actions\BulkActionGroup::make([
                     Tables\Actions\DeleteBulkAction::make(),
                 ]),
+            ])
+            ->emptyStateHeading('Belum ada data')
+            ->emptyStateDescription('')
+            ->emptyStateActions([
+                Tables\Actions\Action::make('create')
+                    ->label('Tambah Jadwal')
+                    ->url(route('filament.admin.resources.anaks.create'))
+                    ->icon('heroicon-m-plus')
+                    ->button(),
             ]);
     }
 

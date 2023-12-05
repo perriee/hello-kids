@@ -5,12 +5,11 @@
     <div class="px-32">
 
         <div class="mx-auto mt-20 rounded-xl">
-            <span class="text-2xl font-semibold">Data Ibu Hamil</span>
+            <span class="text-2xl font-semibold">Layanan Ibu Hamil</span>
         </div>
 
         <section class="mt-6 rounded-xl">
             <div class="max-w-screen-xl mx-auto">
-                <!-- Start coding here -->
                 <div class="relative overflow-hidden bg-white shadow-md rounded-xl">
                     <div class="overflow-x-auto">
                         <table class="w-full text-gray-500">
@@ -19,7 +18,7 @@
                                     <th scope="col" class="w-10 px-4 py-3 text-center">No</th>
                                     <th scope="col" class="px-4 py-3 w-44">Usia Kandungan</th>
                                     <th scope="col" class="w-[10rem] px-4 py-3">Berat Badan</th>
-                                    <th scope="col" class="px-4 py-3 w-[7rem]">Tensi</th>
+                                    <th scope="col" class="px-4 py-3 w-[10rem]">Tensi</th>
                                     <th scope="col" class="w-[10rem] px-4 py-3">Lingkar Lengan</th>
                                     <th scope="col" class="px-4 py-3 w-[20rem]">Keluhan</th>
                                     <th scope="col" class="px-4 py-3 w-[9rem]">Jadwal Periksa</th>
@@ -44,7 +43,7 @@
                                                 {{ $row->berat_badan }} kg
                                             </td>
                                             <td class="px-4 py-3">
-                                                {{ $row->tensi }}
+                                                {{ $row->tensi }} mmHg
                                             </td>
                                             <td class="px-4 py-3">
                                                 {{ $row->lingkar_lengan }} cm

@@ -10,6 +10,8 @@ class CreateJenisImun extends CreateRecord
 {
     protected static string $resource = JenisImunResource::class;
 
+    protected static ?string $title = 'Buat Jenis Imunisasi';
+
     protected function getRedirectUrl(): string
     {
         $resource = static::getResource();

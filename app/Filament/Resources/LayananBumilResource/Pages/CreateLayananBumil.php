@@ -10,12 +10,7 @@ class CreateLayananBumil extends CreateRecord
 {
     protected static string $resource = LayananBumilResource::class;
 
-    // protected function mutateFormDataBeforeCreate(array $data): array
-    // {
-    //     dd($data);
-
-    //     return $data;
-    // }
+    protected static ?string $title = 'Buat Layanan Ibu Hamil';
 
     protected function getRedirectUrl(): string
     {

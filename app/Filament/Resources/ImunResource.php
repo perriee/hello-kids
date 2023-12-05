@@ -21,7 +21,7 @@ class ImunResource extends Resource
 
     protected static ?string $navigationGroup = 'Layanan';
 
-    protected static ?string $navigationLabel = 'Imun';
+    protected static ?string $navigationLabel = 'Imunisasi';
 
     protected static ?string $navigationIcon = 'heroicon-s-circle-stack';
 
@@ -39,8 +39,8 @@ class ImunResource extends Resource
                     ->required(),
                 Forms\Components\Select::make('jenis_imun_id')
                     ->relationship('jenis_imun', 'nama_imun')
-                    ->label('Jenis Imun')
-                    ->placeholder('Pilih Jenis Imun')
+                    ->label('Jenis Imunisasi')
+                    ->placeholder('Pilih Jenis Imunisasi')
                     ->searchable()
                     ->preload()
                     ->native(false)
@@ -57,12 +57,12 @@ class ImunResource extends Resource
                     ->searchable()
                     ->sortable(),
                 Tables\Columns\TextColumn::make('jenis_imun.nama_imun')
-                    ->label('Jenis Imun')
+                    ->label('Jenis Imunisasi')
                     ->searchable()
                     ->numeric()
                     ->sortable(),
                 Tables\Columns\TextColumn::make('created_at')
-                    ->label('Tanggal Imun')
+                    ->label('Tanggal Imunisasi')
                     ->dateTime()
                     ->sortable(),
                 Tables\Columns\TextColumn::make('updated_at')
@@ -81,6 +81,15 @@ class ImunResource extends Resource
                 Tables\Actions\BulkActionGroup::make([
                     Tables\Actions\DeleteBulkAction::make(),
                 ]),
+            ])
+            ->emptyStateHeading('Belum ada data')
+            ->emptyStateDescription('')
+            ->emptyStateActions([
+                Tables\Actions\Action::make('create')
+                    ->label('Tambah Jadwal')
+                    ->url(route('filament.admin.resources.imuns.create'))
+                    ->icon('heroicon-m-plus')
+                    ->button(),
             ]);
     }
 

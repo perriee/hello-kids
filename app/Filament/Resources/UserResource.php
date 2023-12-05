@@ -26,7 +26,7 @@ class UserResource extends Resource
 
     protected static ?string $navigationLabel = 'Ibu';
 
-    protected static ?string $navigationIcon = 'heroicon-s-user-group';
+    protected static ?string $navigationIcon = 'heroicon-s-user';
 
     public static function form(Form $form): Form
     {
@@ -114,6 +114,15 @@ class UserResource extends Resource
                 Tables\Actions\BulkActionGroup::make([
                     Tables\Actions\DeleteBulkAction::make(),
                 ]),
+            ])
+            ->emptyStateHeading('Belum ada data')
+            ->emptyStateDescription('')
+            ->emptyStateActions([
+                Tables\Actions\Action::make('create')
+                    ->label('Tambah Jadwal')
+                    ->url(route('filament.admin.resources.users.create'))
+                    ->icon('heroicon-m-plus')
+                    ->button(),
             ]);
     }
 

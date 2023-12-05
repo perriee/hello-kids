@@ -21,6 +21,8 @@
         @include('layouts.global_partials.footer')
     </footer>
 
+    @stack('javascript')
+
 </body>
 
 </html>

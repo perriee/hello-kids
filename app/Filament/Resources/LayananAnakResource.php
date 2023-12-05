@@ -23,7 +23,7 @@ class LayananAnakResource extends Resource
 
     protected static ?string $navigationLabel = 'Anak';
 
-    protected static ?string $navigationIcon = 'heroicon-s-user';
+    protected static ?string $navigationIcon = 'heroicon-s-user-group';
 
     public static function form(Form $form): Form
     {
@@ -38,7 +38,7 @@ class LayananAnakResource extends Resource
                     ->native(false)
                     ->required(),
                 Forms\Components\TextInput::make('lingkar_kepala')
-                    ->label('Lingkar (cm)')
+                    ->label('Lingkar Kepala (cm)')
                     ->placeholder('Masukkan Lingkar Kepala')
                     ->required()
                     ->numeric(),
@@ -98,6 +98,15 @@ class LayananAnakResource extends Resource
                 Tables\Actions\BulkActionGroup::make([
                     Tables\Actions\DeleteBulkAction::make(),
                 ]),
+            ])
+            ->emptyStateHeading('Belum ada data')
+            ->emptyStateDescription('')
+            ->emptyStateActions([
+                Tables\Actions\Action::make('create')
+                    ->label('Tambah Jadwal')
+                    ->url(route('filament.admin.resources.layanan-anaks.create'))
+                    ->icon('heroicon-m-plus')
+                    ->button(),
             ]);
     }
 

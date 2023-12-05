@@ -11,6 +11,6 @@
             <div><a href="#agenda">Agenda</a></div>
         </div>
         <div class="flex items-center justify-center">
-            <a href="{{ route('login') }}" class="px-8 py-2 font-semibold rounded-lg text-slate-200 bg-primary hover:bg-primary-hover">Login</a>
+            <a href="{{ route('login') }}" class="px-8 py-2 font-semibold transition-all border-2 rounded-lg text-slate-200 bg-primary hover:bg-white hover:text-primary hover:outline-primary border-primary">Login</a>
         </div>
     </nav>

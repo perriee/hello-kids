@@ -17,7 +17,7 @@ class JenisImunResource extends Resource
 {
     protected static ?string $model = JenisImun::class;
 
-    protected static ?string $navigationLabel = 'Jenis Imun';
+    protected static ?string $navigationLabel = 'Jenis Imunisasi';
 
     protected static ?string $navigationIcon = 'heroicon-s-circle-stack';
 
@@ -26,13 +26,14 @@ class JenisImunResource extends Resource
         return $form
             ->schema([
                 Forms\Components\TextInput::make('nama_imun')
+                    ->label('Nama Imunisasi')
                     ->required()
-                    ->placeholder('Masukkan Nama Imun')
+                    ->placeholder('Masukkan Nama Imunisasi')
                     ->maxLength(30)
                     ->columnSpan(1),
                 Forms\Components\Textarea::make('deskripsi')
                     ->required()
-                    ->placeholder('Masukkan Deskripsi Imun')
+                    ->placeholder('Masukkan Deskripsi Imunisasi')
                     ->maxLength(65535)
                     ->columnSpan(1),
             ]);
@@ -43,7 +44,7 @@ class JenisImunResource extends Resource
         return $table
             ->columns([
                 Tables\Columns\TextColumn::make('nama_imun')
-                    ->label('Nama Imun')
+                    ->label('Nama Imunisasi')
                     ->searchable(),
                 Tables\Columns\TextColumn::make('deskripsi')
                     ->label('Deskripsi')
@@ -69,6 +70,15 @@ class JenisImunResource extends Resource
                 Tables\Actions\BulkActionGroup::make([
                     Tables\Actions\DeleteBulkAction::make(),
                 ]),
+            ])
+            ->emptyStateHeading('Belum ada data')
+            ->emptyStateDescription('')
+            ->emptyStateActions([
+                Tables\Actions\Action::make('create')
+                    ->label('Tambah Jadwal')
+                    ->url(route('filament.admin.resources.jenis-imuns.create'))
+                    ->icon('heroicon-m-plus')
+                    ->button(),
             ]);
     }
 

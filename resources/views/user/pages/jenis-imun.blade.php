@@ -5,20 +5,19 @@
     <div class="px-32">
 
         <div class="mx-auto mt-20 rounded-xl">
-            <span class="text-2xl font-semibold">Data Jenis Imun</span>
+            <span class="text-2xl font-semibold">Jenis Imunisasi yang tersedia</span>
         </div>
 
         <section class="mt-6 rounded-xl">
             <div class="max-w-screen-xl mx-auto">
-                <!-- Start coding here -->
                 <div class="relative overflow-hidden bg-white shadow-md rounded-xl">
                     <div class="overflow-x-auto">
                         <table class="w-full text-gray-500">
                             <thead class="text-gray-700 bg-gray-50 dark:bg-gray-700">
-                                <tr class="text-center">
-                                    <th scope="col" class="w-10 px-4 py-3 text-center">No</th>
-                                    <th scope="col" class="px-4 py-3 w-44">Nama Imun</th>
-                                    <th scope="col" class="px-4 py-3 w-44">Deskripsi</th>
+                                <tr class="text-left">
+                                    <th scope="col" class="px-4 py-3 text-center">No</th>
+                                    <th scope="col" class="w-[20rem] px-4 py-3">Nama Imunisasi</th>
+                                    <th scope="col" class="px-4 py-3 text-center">Deskripsi</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -31,8 +30,8 @@
                                     </tr>
                                 @elseif (count($jenis_imun) > 0)
                                     @foreach ($jenis_imun as $row)
-                                        <tr class="text-center border-b">
-                                            <td class="px-4 py-3">{{ $no++ }}</td>
+                                        <tr class="border-b">
+                                            <td class="px-4 py-3 text-center">{{ $no++ }}</td>
                                             <td class="px-4 py-3">
                                                 {{ $row->nama_imun }}
                                             </td>

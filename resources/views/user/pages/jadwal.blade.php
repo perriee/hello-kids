@@ -5,12 +5,11 @@
     <div class="px-32">
 
         <div class="mx-auto mt-20 rounded-xl">
-            <span class="text-2xl font-semibold">Data Jadwal Pemeriksaan</span>
+            <span class="text-2xl font-semibold">Jadwal Pemeriksaan</span>
         </div>
 
         <section class="mt-6 rounded-xl">
             <div class="max-w-screen-xl mx-auto">
-                <!-- Start coding here -->
                 <div class="relative overflow-hidden bg-white shadow-md rounded-xl">
                     <div class="overflow-x-auto">
                         <table class="w-full text-gray-500">

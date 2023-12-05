@@ -32,18 +32,15 @@
             </div>
 
             <div class="flex items-center justify-between mt-6">
-                <a class="text-sm rounded-md text-slate-400 hover:text-slate-500"
-                    href="{{ route('register') }}">
+                <a class="text-sm rounded-md text-slate-400 hover:text-slate-500" href="{{ route('register') }}">
                     Belum Punya Akun? <span class="font-semibold">Klik di sini.</span>
                 </a>
 
-                <button type="submit" class="px-8 py-2 font-semibold rounded-lg text-slate-200 bg-primary hover:bg-primary-hover">
+                <button type="submit"
+                    class="px-8 py-2 font-semibold text-white transition-all border-2 rounded-lg bg-primary hover:bg-white border-primary hover:text-primary">
                     Login
                 </button>
 
-                {{-- <x-primary-button class="ms-4">
-                    {{ __('Login') }}
-                </x-primary-button> --}}
             </div>
         </form>
 

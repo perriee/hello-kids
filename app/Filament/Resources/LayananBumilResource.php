@@ -23,7 +23,7 @@ class LayananBumilResource extends Resource
 
     protected static ?string $navigationLabel = 'Ibu Hamil';
 
-    protected static ?string $navigationIcon = 'heroicon-s-user-group';
+    protected static ?string $navigationIcon = 'heroicon-s-user';
 
     public static function form(Form $form): Form
     {
@@ -50,6 +50,7 @@ class LayananBumilResource extends Resource
                     ->required()
                     ->numeric(),
                 Forms\Components\TextInput::make('tensi')
+                    ->label('Tensi (mmHg)')
                     ->placeholder('Masukkan Tensi')
                     ->required()
                     ->numeric(),
@@ -84,7 +85,7 @@ class LayananBumilResource extends Resource
                     ->numeric()
                     ->sortable(),
                 Tables\Columns\TextColumn::make('tensi')
-                    ->label('Tensi')
+                    ->label('Tensi (mmHg)')
                     ->alignCenter()
                     ->numeric()
                     ->sortable(),
@@ -113,6 +114,15 @@ class LayananBumilResource extends Resource
                 Tables\Actions\BulkActionGroup::make([
                     Tables\Actions\DeleteBulkAction::make(),
                 ]),
+            ])
+            ->emptyStateHeading('Belum ada data')
+            ->emptyStateDescription('')
+            ->emptyStateActions([
+                Tables\Actions\Action::make('create')
+                    ->label('Tambah Jadwal')
+                    ->url(route('filament.admin.resources.layanan-bumils.create'))
+                    ->icon('heroicon-m-plus')
+                    ->button(),
             ]);
     }
 

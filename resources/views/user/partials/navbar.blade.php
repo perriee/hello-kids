@@ -12,7 +12,7 @@
             @if (Auth::user()->is_pregnant === 1)
                 <div><a href="{{ route('user.hamil') }}">Hamil</a></div>
             @endif
-            <div><a href="{{ route('user.imun') }}">Imun</a></div>
+            <div><a href="{{ route('user.imun') }}">Imunisasi</a></div>
             <div><a href="{{ route('user.jadwal') }}">Jadwal</a></div>
         </div>
         <div class="flex items-center justify-center">
@@ -20,7 +20,7 @@
             <form method="POST" action="{{ route('logout') }}">
                 @csrf
 
-                <button class="px-8 py-2 font-semibold rounded-lg text-slate-200 bg-primary hover:bg-primary-hover"
+                <button class="px-8 py-2 font-semibold text-white transition-all border-2 rounded-lg hover:text-primary bg-primary hover:bg-white border-primary"
                     href="route('logout')" onclick="event.preventDefault();this.closest('form').submit();">
                     Logout
                 </button>
