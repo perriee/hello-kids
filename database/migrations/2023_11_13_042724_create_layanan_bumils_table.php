@@ -16,7 +16,7 @@ return new class extends Migration
             $table->unsignedBigInteger('user_id')->nullable();
             $table->integer('usia_kandungan')->length(10);
             $table->integer('berat_badan')->length(3);
-            $table->integer('tensi')->length(4);
+            $table->string('tensi', 8);
             $table->integer('lingkar_lengan')->length(3);
             $table->text('keluhan');
 

@@ -44,6 +44,7 @@ class AnakResource extends Resource
                     ->required()
                     ->maxLength(100),
                 Forms\Components\TextInput::make('umur')
+                    ->label('Umur (bulan)')
                     ->placeholder('Masukkan Umur')
                     ->required(),
                 Forms\Components\Select::make('jenis_kelamin')
@@ -69,7 +70,7 @@ class AnakResource extends Resource
                     ->label('Nama Anak')
                     ->searchable(),
                 Tables\Columns\TextColumn::make('umur')
-                    ->label('Umur (tahun)')
+                    ->label('Umur (bulan)')
                     ->alignCenter(),
                 Tables\Columns\TextColumn::make('jenis_kelamin')
                     ->label('Jenis Kelamin')

@@ -27,6 +27,7 @@ Route::middleware('auth')->group(function () {
 
 Route::prefix('user')->group(function () {
     Route::get('/anak', [UserController::class, 'viewAnak'])->name('user.anak');
+    Route::get('/anak/{id}/layanan', [UserController::class, 'viewLayananAnak'])->name('user.layanan.anak');
     Route::get('/hamil', [UserController::class, 'viewHamil'])->name('user.hamil');
     Route::get('/imun', [UserController::class, 'viewImun'])->name('user.imun');
     Route::get('/jadwal', [UserController::class, 'viewJadwal'])->name('user.jadwal');

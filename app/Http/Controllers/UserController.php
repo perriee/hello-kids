@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Anak;
 use App\Models\Jadwal;
 use App\Models\JenisImun;
 use App\Models\LayananAnak;
@@ -31,20 +32,34 @@ class UserController extends Controller
 
         $anaks = $data_user->anak;
 
-        $anakData = [];
+        // $data_anak = [];
 
-        foreach ($anaks as $anak) {
-            $id_anak = $anak->id;
+        // foreach ($anaks as $anak) {
+        //     $id_anak = $anak->id;
 
-            $data_layanan_anak = LayananAnak::where('anak_id', $id_anak)->first();
+        //     $data_layanan_anak = LayananAnak::where('anak_id', $id_anak)->get();
 
-            $anakData[] = [
-                'anak' => $anak,
-                'layanan_anak' => $data_layanan_anak,
-            ];
-        }
+        //     $data_anak[] = [
+        //         'anak' => $anak,
+        //         'layanan_anak' => $data_layanan_anak,
+        //     ];
+        // }
 
-        return view('user.pages.anak', compact('anakData', 'page_title'));
+        // dd($data_anak);
+
+        return view('user.pages.anak', compact('page_title', 'anaks'));
+    }
+
+    public function viewLayananAnak($id)
+    {
+        $page_title = 'Layanan Anak';
+
+        $anak = Anak::findOrFail($id);
+        $layanan_anak = LayananAnak::where('anak_id', $id)->get();
+
+        // dd($layanan_anak);
+
+        return view('user.pages.layanan-anak', compact('page_title', 'layanan_anak', 'anak'));
     }
 
     public function viewHamil()
