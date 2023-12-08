@@ -9,7 +9,7 @@
         <div class="flex items-center justify-center gap-10 text-lg font-semibold text-primary">
             <div><a href="{{ route('profile.edit') }}">Profil</a></div>
             <div><a href="{{ route('user.anak') }}">Anak</a></div>
-            @if (Auth::user()->is_pregnant === 1)
+            @if (Auth::user()->is_pregnant == 1)
                 <div><a href="{{ route('user.hamil') }}">Hamil</a></div>
             @endif
             <div><a href="{{ route('user.jenis-imun') }}">Imunisasi</a></div>

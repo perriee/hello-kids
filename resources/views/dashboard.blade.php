@@ -18,7 +18,7 @@
                 </div>
             </a>
 
-            @if (Auth::user()->is_pregnant === 1)
+            @if (Auth::user()->is_pregnant == 1)
                 <a href="{{ route('user.hamil') }}">
                     <div
                         class="flex flex-col justify-between overflow-hidden transition-all border-4 h-72 border-slate-300 rounded-xl hover:border-primary">
