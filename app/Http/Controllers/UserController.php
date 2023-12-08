@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Anak;
+use App\Models\Imun;
 use App\Models\Jadwal;
 use App\Models\JenisImun;
 use App\Models\LayananAnak;
@@ -32,21 +33,6 @@ class UserController extends Controller
 
         $anaks = $data_user->anak;
 
-        // $data_anak = [];
-
-        // foreach ($anaks as $anak) {
-        //     $id_anak = $anak->id;
-
-        //     $data_layanan_anak = LayananAnak::where('anak_id', $id_anak)->get();
-
-        //     $data_anak[] = [
-        //         'anak' => $anak,
-        //         'layanan_anak' => $data_layanan_anak,
-        //     ];
-        // }
-
-        // dd($data_anak);
-
         return view('user.pages.anak', compact('page_title', 'anaks'));
     }
 
@@ -55,11 +41,25 @@ class UserController extends Controller
         $page_title = 'Layanan Anak';
 
         $anak = Anak::findOrFail($id);
+
         $layanan_anak = LayananAnak::where('anak_id', $id)->get();
 
-        // dd($layanan_anak);
+        $data_grafik = LayananAnak::select('created_at', 'lingkar_kepala', 'berat_badan', 'tinggi_badan')
+            ->where('anak_id', $id)
+            ->get();
 
-        return view('user.pages.layanan-anak', compact('page_title', 'layanan_anak', 'anak'));
+        return view('user.pages.layanan-anak', compact('page_title', 'layanan_anak', 'anak', 'data_grafik'));
+    }
+
+    public function viewImunisasiAnak($id)
+    {
+        $page_title = 'Imunisasi Anak';
+
+        $anak = Anak::findOrFail($id);
+
+        $imunisasi_anak = Imun::with('jenis_imun')->where('anak_id', $id)->get();
+
+        return view('user.pages.imun', compact('anak', 'imunisasi_anak', 'page_title'));
     }
 
     public function viewHamil()
@@ -73,7 +73,7 @@ class UserController extends Controller
         return view('user.pages.hamil', compact('layananBumil', 'page_title'));
     }
 
-    public function viewImun()
+    public function viewJenisImun()
     {
         $page_title = 'Data Jenis Imunisasi';
 

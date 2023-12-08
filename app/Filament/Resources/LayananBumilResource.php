@@ -52,8 +52,7 @@ class LayananBumilResource extends Resource
                 Forms\Components\TextInput::make('tensi')
                     ->label('Tensi (mmHg)')
                     ->placeholder('Masukkan Tensi')
-                    ->required()
-                    ->numeric(),
+                    ->required(),
                 Forms\Components\TextInput::make('lingkar_lengan')
                     ->label('Lingkar Lengan (cm)')
                     ->placeholder('Masukkan Lingkar Lengan')
@@ -86,9 +85,7 @@ class LayananBumilResource extends Resource
                     ->sortable(),
                 Tables\Columns\TextColumn::make('tensi')
                     ->label('Tensi (mmHg)')
-                    ->alignCenter()
-                    ->numeric()
-                    ->sortable(),
+                    ->alignCenter(),
                 Tables\Columns\TextColumn::make('lingkar_lengan')
                     ->label('Lingkar Lengan (cm)')
                     ->alignCenter()

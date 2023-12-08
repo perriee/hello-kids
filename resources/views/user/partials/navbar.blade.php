@@ -12,7 +12,7 @@
             @if (Auth::user()->is_pregnant === 1)
                 <div><a href="{{ route('user.hamil') }}">Hamil</a></div>
             @endif
-            <div><a href="{{ route('user.imun') }}">Imunisasi</a></div>
+            <div><a href="{{ route('user.jenis-imun') }}">Imunisasi</a></div>
             <div><a href="{{ route('user.jadwal') }}">Jadwal</a></div>
         </div>
         <div class="flex items-center justify-center">

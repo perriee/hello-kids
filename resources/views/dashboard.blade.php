@@ -5,7 +5,7 @@
     <div class="px-32">
 
         <div class="mx-auto mt-20 rounded-xl">
-            <span class="text-2xl tracking-wider text-slate-500">Selamat Datang, Bu {{ Auth::user()->name }}.</span>
+            <span class="text-2xl tracking-wider text-slate-600">Selamat Datang, Bu {{ Auth::user()->name }}.</span>
         </div>
 
         <div class="grid grid-cols-4 gap-6 mt-14">
@@ -30,7 +30,7 @@
                 </a>
             @endif
 
-            <a href="{{ route('user.imun') }}">
+            <a href="{{ route('user.jenis-imun') }}">
                 <div
                     class="flex flex-col justify-between overflow-hidden transition-all border-4 h-72 border-slate-300 rounded-xl hover:border-primary">
                     <div class="flex items-center justify-center h-full"><img src="{{ asset('img/antibiotics.webp') }}"

@@ -2,18 +2,18 @@
 
     @section('title', $page_title)
 
-    <div class="px-32">
+    <div class="px-32 py-20">
 
-        <div class="mx-auto mt-20 rounded-xl">
-            <span class="text-2xl font-semibold">Jenis Imunisasi yang tersedia</span>
+        <div class="mx-auto rounded-xl">
+            <span class="text-2xl font-semibold text-slate-600">Jenis Imunisasi yang tersedia</span>
         </div>
 
         <section class="mt-6 rounded-xl">
             <div class="max-w-screen-xl mx-auto">
                 <div class="relative overflow-hidden bg-white shadow-md rounded-xl">
                     <div class="overflow-x-auto">
-                        <table class="w-full text-gray-500">
-                            <thead class="text-gray-700 bg-gray-50 dark:bg-gray-700">
+                        <table class="w-full text-slate-500">
+                            <thead class="text-slate-700 bg-slate-50 dark:bg-slate-700">
                                 <tr class="text-left">
                                     <th scope="col" class="px-4 py-3 text-center">No</th>
                                     <th scope="col" class="w-[20rem] px-4 py-3">Nama Imunisasi</th>
