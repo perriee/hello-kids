@@ -8,7 +8,7 @@
             <span class="text-2xl font-semibold text-slate-600">Data Perkembangan {{ $anak->name }}</span>
         </div>
 
-        <section class="mt-6 rounded-xl bg-sky-700">
+        <section class="mt-6 rounded-xl">
             <div class="max-w-screen-xl mx-auto">
                 <div class="relative overflow-hidden bg-white shadow-md rounded-xl">
                     <div class="overflow-x-auto">

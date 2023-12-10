@@ -48,6 +48,8 @@ class UserController extends Controller
             ->where('anak_id', $id)
             ->get();
 
+        // dd($data_grafik);
+
         return view('user.pages.layanan-anak', compact('page_title', 'layanan_anak', 'anak', 'data_grafik'));
     }
 
@@ -68,9 +70,13 @@ class UserController extends Controller
 
         $id_user = Auth::id();
 
+        $data_ibu = Auth::user();
+
         $layananBumil = User::find($id_user)->layanan_bumil;
 
-        return view('user.pages.hamil', compact('layananBumil', 'page_title'));
+        // dd($data_ibu);
+
+        return view('user.pages.hamil', compact('data_ibu', 'layananBumil', 'page_title'));
     }
 
     public function viewJenisImun()
