@@ -19,6 +19,8 @@
                                     <th scope="col" class="px-4 py-3">Lingkar Kepala</th>
                                     <th scope="col" class="px-4 py-3">Tinggi Badan</th>
                                     <th scope="col" class="px-4 py-3">Berat Badan</th>
+                                    <th scope="col" class="px-4 py-3">IMT</th>
+                                    <th scope="col" class="px-4 py-3">Status BB</th>
                                     <th scope="col" class="px-4 py-3">Jadwal Periksa</th>
                                 </tr>
                             </thead>
@@ -39,6 +41,32 @@
                                             {{ optional($row)->berat_badan ? $row->berat_badan . ' kg' : '-' }}
                                         </td>
                                         <td class="px-4 py-3">
+                                            @php
+                                                $tinggi_badan_meter = $row->tinggi_badan / 100;
+                                                $imt = $row->berat_badan / ($tinggi_badan_meter * $tinggi_badan_meter);
+                                            @endphp
+                                            {{ number_format($imt, 2, '.', '') }}
+                                        </td>
+                                        <td class="px-4 py-3">
+                                            @php
+                                                $tinggi_badan_meter = $row->tinggi_badan / 100;
+                                                $imt = $row->berat_badan / ($tinggi_badan_meter * $tinggi_badan_meter);
+                                            @endphp
+                                            @if ($imt < 18.5)
+                                                <span
+                                                    class="bg-amber-400 text-sm px-3 py-1 rounded-full text-white font-medium">Kurus</span>
+                                            @elseif ($imt >= 18.5 && $imt < 25)
+                                                <span
+                                                    class="bg-green-500 text-sm px-3 py-1 rounded-full text-white font-medium">Normal</span>
+                                            @elseif ($imt >= 25 && $imt < 30)
+                                                <span
+                                                    class="bg-amber-400 text-sm px-3 py-1 rounded-full text-white font-medium">Gemuk</span>
+                                            @elseif ($imt >= 30)
+                                                <span
+                                                    class="bg-red-500 text-sm px-3 py-1 rounded-full text-white font-medium">Obesitas</span>
+                                            @endif
+                                        </td>
+                                        <td class="px-4 py-3">
                                             {{ $row === null ? '-' : $row->created_at->translatedFormat('d M Y') }}
                                         </td>
                                     </tr>
@@ -57,7 +85,8 @@
         @if (count($layanan_anak) > 0)
             <!-- Grafik Perkembangan Anak -->
             <div class="mt-10 bg-white shadow-md rounded-xl">
-                <div class="px-6 py-4 text-lg font-semibold text-center text-slate-600">Grafik Perkembangan {{ $anak->name }}</div>
+                <div class="px-6 py-4 text-lg font-semibold text-center text-slate-600">Grafik Perkembangan
+                    {{ $anak->name }}</div>
                 <canvas id="grafikLayananAnak" width="800" height="350"></canvas>
             </div>
         @endif
