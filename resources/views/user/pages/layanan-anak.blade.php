@@ -14,7 +14,7 @@
                     <div class="overflow-x-auto">
                         <table class="w-full text-slate-500">
                             <thead class="text-slate-700 bg-slate-50 dark:bg-slate-700">
-                                <tr class="text-center">
+                                <tr class="text-center text-sm">
                                     <th scope="col" class="w-10 px-4 py-3 text-center">No</th>
                                     <th scope="col" class="px-4 py-3">Lingkar Kepala</th>
                                     <th scope="col" class="px-4 py-3">Tinggi Badan</th>
@@ -30,7 +30,7 @@
                                     $no = 1;
                                 @endphp
                                 @forelse ($layanan_anak as $row)
-                                    <tr class="text-center border-b">
+                                    <tr class="text-center border-b text-sm">
                                         <td class="px-4 py-3">{{ $no++ }}</td>
                                         <td class="px-4 py-3">
                                             {{ optional($row)->lingkar_kepala ? $row->lingkar_kepala . ' cm' : '-' }}
@@ -73,24 +73,24 @@
                                                 $imt = $row->berat_badan / ($tinggi_badan_meter * $tinggi_badan_meter);
                                             @endphp
                                             @if ($imt < 18.5)
-                                                <span class="text-sm px-3 py-1 font-medium">Berfokus pada makanan
+                                                <span class="text-sm px-3 py-1">Berfokus pada makanan
                                                     bergizi tinggi dan camilan sehat. Konsultasikan dengan ahli gizi
                                                     untuk rencana nutrisi yang tepat.</span>
                                             @elseif ($imt >= 18.5 && $imt < 25)
-                                                <span class="text-sm px-3 py-1 font-medium">Jaga kestabilan pola makan
+                                                <span class="text-sm px-3 py-1">Jaga kestabilan pola makan
                                                     dan aktivitas fisik. Pertahankan kebiasaan hidup sehat untuk
                                                     mendukung pertumbuhan optimal.</span>
                                             @elseif ($imt >= 25 && $imt < 30)
-                                                <span class="text-sm px-3 py-1 font-medium">Kurangi konsumsi makanan
+                                                <span class="text-sm px-3 py-1">Kurangi konsumsi makanan
                                                     tinggi lemak dan gula. Ajak anak berpartisipasi dalam kegiatan fisik
                                                     yang menyenangkan.</span>
                                             @elseif ($imt >= 30)
-                                                <span class="text-sm px-3 py-1 font-medium">Sertakan lebih banyak
+                                                <span class="text-sm px-3 py-1">Sertakan lebih banyak
                                                     sayuran dan buah dalam pola makan. Rencanakan program olahraga
                                                     ringan bersama keluarga secara teratur.</span>
                                             @endif
                                         </td>
-                                        <td class="px-4 py-3">
+                                        <td class="px-4 py-3 w-32">
                                             {{ $row === null ? '-' : $row->created_at->translatedFormat('d M Y') }}
                                         </td>
                                     </tr>
