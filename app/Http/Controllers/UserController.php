@@ -15,7 +15,9 @@ class UserController extends Controller
 {
     public function index()
     {
-        return view('home');
+        $jadwals = Jadwal::all();
+
+        return view('home', compact('jadwals'));
     }
 
     public function dashboard()

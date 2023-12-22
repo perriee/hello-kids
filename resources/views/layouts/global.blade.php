@@ -5,6 +5,8 @@
 
     @include('layouts.global_partials.head')
 
+    <title>@yield('title') - {{ config('app.name') }}</title>
+
 </head>
 
 <body class="font-poppins">
