@@ -90,7 +90,7 @@
                                                     ringan bersama keluarga secara teratur.</span>
                                             @endif
                                         </td>
-                                        <td class="px-4 py-3 w-32">
+                                        <td class="px-4 py-3 w-40">
                                             {{ $row === null ? '-' : $row->created_at->translatedFormat('d M Y') }}
                                         </td>
                                     </tr>
