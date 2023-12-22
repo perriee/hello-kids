@@ -21,6 +21,7 @@
                                     <th scope="col" class="px-4 py-3">Berat Badan</th>
                                     <th scope="col" class="px-4 py-3">IMT</th>
                                     <th scope="col" class="px-4 py-3">Status BB</th>
+                                    <th scope="col" class="px-4 py-3">Saran</th>
                                     <th scope="col" class="px-4 py-3">Jadwal Periksa</th>
                                 </tr>
                             </thead>
@@ -64,6 +65,29 @@
                                             @elseif ($imt >= 30)
                                                 <span
                                                     class="bg-red-500 text-sm px-3 py-1 rounded-full text-white font-medium">Obesitas</span>
+                                            @endif
+                                        </td>
+                                        <td class="px-4 py-3">
+                                            @php
+                                                $tinggi_badan_meter = $row->tinggi_badan / 100;
+                                                $imt = $row->berat_badan / ($tinggi_badan_meter * $tinggi_badan_meter);
+                                            @endphp
+                                            @if ($imt < 18.5)
+                                                <span class="text-sm px-3 py-1 font-medium">Berfokus pada makanan
+                                                    bergizi tinggi dan camilan sehat. Konsultasikan dengan ahli gizi
+                                                    untuk rencana nutrisi yang tepat.</span>
+                                            @elseif ($imt >= 18.5 && $imt < 25)
+                                                <span class="text-sm px-3 py-1 font-medium">Jaga kestabilan pola makan
+                                                    dan aktivitas fisik. Pertahankan kebiasaan hidup sehat untuk
+                                                    mendukung pertumbuhan optimal.</span>
+                                            @elseif ($imt >= 25 && $imt < 30)
+                                                <span class="text-sm px-3 py-1 font-medium">Kurangi konsumsi makanan
+                                                    tinggi lemak dan gula. Ajak anak berpartisipasi dalam kegiatan fisik
+                                                    yang menyenangkan.</span>
+                                            @elseif ($imt >= 30)
+                                                <span class="text-sm px-3 py-1 font-medium">Sertakan lebih banyak
+                                                    sayuran dan buah dalam pola makan. Rencanakan program olahraga
+                                                    ringan bersama keluarga secara teratur.</span>
                                             @endif
                                         </td>
                                         <td class="px-4 py-3">
