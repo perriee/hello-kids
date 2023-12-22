@@ -29,7 +29,7 @@
                                         <td class="px-4 py-3">{{ $no++ }}</td>
                                         <td class="px-4 py-3">{{ $row->jenis_imun->nama_imun }}</td>
                                         <td class="px-4 py-3">
-                                            {{ $row->jenis_imun->created_at->translatedFormat('d M Y') }}</td>
+                                            {{ $row->created_at->translatedFormat('d M Y') }}</td>
                                     </tr>
                                 @empty
                                     <tr>
