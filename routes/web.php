@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\LayananAnakController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
@@ -21,6 +22,7 @@ Route::prefix('user')->group(function () {
     Route::get('/hamil', [UserController::class, 'viewHamil'])->name('user.hamil');
     Route::get('/jenis-imun', [UserController::class, 'viewJenisImun'])->name('user.jenis-imun');
     Route::get('/jadwal', [UserController::class, 'viewJadwal'])->name('user.jadwal');
+    Route::get('/layanan-anak/export', [LayananAnakController::class, 'export'])->name('export');
 });
 
 require __DIR__ . '/auth.php';

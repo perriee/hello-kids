@@ -4,8 +4,11 @@
 
     <div class="px-32 py-20">
 
-        <div class="mx-auto rounded-xl">
+        <div class="mx-auto rounded-xl flex justify-between items-center">
             <span class="text-2xl font-semibold text-slate-600">Data Perkembangan {{ $anak->name }}</span>
+            {{-- <a href="{{ route('export') }}"
+                class="bg-slate-100 rounded-xl px-3 py-2 text-sm border-2 font-semibold border-primary text-primary transition-all hover:bg-primary hover:text-white">Export
+                Data</a> --}}
         </div>
 
         <section class="mt-6 rounded-xl">

@@ -12,6 +12,9 @@ use Filament\Tables;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
+use pxlrbt\FilamentExcel\Actions\Tables\ExportAction;
+use pxlrbt\FilamentExcel\Exports\ExcelExport;
+use pxlrbt\FilamentExcel\Columns\Column;
 
 class LayananBumilResource extends Resource
 {
@@ -72,6 +75,7 @@ class LayananBumilResource extends Resource
             ->columns([
                 Tables\Columns\TextColumn::make('user.name')
                     ->label('Nama Ibu')
+                    ->searchable()
                     ->sortable(),
                 Tables\Columns\TextColumn::make('usia_kandungan')
                     ->label('Usia Kandungan (bulan)')
@@ -106,6 +110,13 @@ class LayananBumilResource extends Resource
             ->actions([
                 Tables\Actions\EditAction::make(),
                 Tables\Actions\DeleteAction::make(),
+            ])
+            ->headerActions([
+                ExportAction::make()->exports([
+                    ExcelExport::make()->fromTable()->withColumns([
+                        Column::make('keluhan')->heading('Keluhan Ibu')
+                    ]),
+                ])
             ])
             ->bulkActions([
                 Tables\Actions\BulkActionGroup::make([

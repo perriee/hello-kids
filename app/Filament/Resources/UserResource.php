@@ -15,6 +15,9 @@ use Filament\Infolists\Components\Section;
 use Filament\Support\Enums\FontWeight;
 use Filament\Tables\Filters\Filter;
 use Illuminate\Database\Eloquent\Builder;
+use pxlrbt\FilamentExcel\Actions\Tables\ExportAction;
+use pxlrbt\FilamentExcel\Exports\ExcelExport;
+use pxlrbt\FilamentExcel\Columns\Column;
 
 class UserResource extends Resource
 {
@@ -109,6 +112,16 @@ class UserResource extends Resource
                 Tables\Actions\ViewAction::make(),
                 Tables\Actions\EditAction::make(),
                 Tables\Actions\DeleteAction::make(),
+            ])
+            ->headerActions([
+                ExportAction::make()->exports([
+                    ExcelExport::make()->withColumns([
+                        Column::make('nik')->heading('NIK'),
+                        Column::make('name')->heading('Nama Lengkap'),
+                        Column::make('no_hp')->heading('No Hp'),
+                        Column::make('is_pregnant')->heading('Sedang Hamil')->formatStateUsing(fn ($state) => $state ? 'Ya' : 'Tidak'),
+                    ]),
+                ])
             ])
             ->bulkActions([
                 Tables\Actions\BulkActionGroup::make([

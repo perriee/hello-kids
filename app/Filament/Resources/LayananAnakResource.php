@@ -12,6 +12,7 @@ use Filament\Tables;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
+use pxlrbt\FilamentExcel\Actions\Tables\ExportAction;
 
 class LayananAnakResource extends Resource
 {
@@ -43,12 +44,12 @@ class LayananAnakResource extends Resource
                     ->required()
                     ->numeric(),
                 Forms\Components\TextInput::make('tinggi_badan')
-                ->label('Tinggi Badan (cm)')
+                    ->label('Tinggi Badan (cm)')
                     ->placeholder('Masukkan Tinggi Badan')
                     ->required()
                     ->numeric(),
                 Forms\Components\TextInput::make('berat_badan')
-                ->label('Berat Badan (kg)')
+                    ->label('Berat Badan (kg)')
                     ->placeholder('Masukkan Berat Badan')
                     ->required()
                     ->numeric(),
@@ -98,6 +99,9 @@ class LayananAnakResource extends Resource
                 Tables\Actions\BulkActionGroup::make([
                     Tables\Actions\DeleteBulkAction::make(),
                 ]),
+            ])
+            ->headerActions([
+                ExportAction::make(),
             ])
             ->emptyStateHeading('Belum ada data')
             ->emptyStateDescription('')
