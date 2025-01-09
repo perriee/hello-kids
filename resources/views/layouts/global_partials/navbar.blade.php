@@ -7,9 +7,10 @@
         </a>
         <div class="flex items-center justify-center gap-10 text-lg font-semibold text-primary">
             <div><a href="#hero">Beranda</a></div>
-            <div><a href="#tentang-kami">Tentang Kami</a></div>
+            <div><a href="#tentang-kami">Tentang</a></div>
             <div><a href="#agenda">Agenda</a></div>
             <div><a href="#jadwal">Jadwal</a></div>
+            <div><a href="{{ route('chatbot.index') }}">Chatbot</a></div>
         </div>
         <div class="flex items-center justify-center">
             <a href="{{ route('login') }}"

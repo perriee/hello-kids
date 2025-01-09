@@ -14,6 +14,7 @@
             @endif
             <div><a href="{{ route('user.jenis-imun') }}">Imunisasi</a></div>
             <div><a href="{{ route('user.jadwal') }}">Jadwal</a></div>
+            <div><a href="{{ route('chatbot.index') }}">Chatbot</a></div>
         </div>
         <div class="flex items-center justify-center">
             <!-- Authentication -->

@@ -67,7 +67,7 @@
     {{-- Jadwal Start --}}
     <section id="jadwal" class="flex flex-col px-40 pt-10 pb-20 bg-slate-100  scroll-mt-16">
         <div class="pb-10 text-4xl font-semibold text-center text-primary" data-aos="fade-down" data-aos-duration="1000">
-            Jadwal Pemeriksaan</div>
+            Jadwal Pelayanan</div>
         <section class="mt-6 rounded-xl" data-aos="fade-down" data-aos-duration="2000">
             <div class="max-w-screen-xl mx-auto">
                 <div class="relative overflow-hidden bg-white shadow-md rounded-xl">
