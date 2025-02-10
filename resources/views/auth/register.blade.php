@@ -3,7 +3,7 @@
     <div class="w-full px-8 py-8 mt-6 overflow-hidden bg-white shadow-md sm:max-w-3xl sm:rounded-lg">
 
         <div class="flex flex-col gap-2 pb-10">
-            <a href="{{ route('home') }}" class="text-xl font-semibold text-center text-primary">Hello Kids</a>
+            <a href="{{ route('home') }}" class="text-xl font-semibold text-center text-primary">Sehat Ceria</a>
             <div class="text-3xl font-semibold text-center">Register</div>
         </div>
 

@@ -5,7 +5,7 @@
     <div class="w-full px-6 py-4 mt-6 overflow-hidden bg-white shadow-md sm:max-w-md sm:rounded-lg">
 
         <div class="flex flex-col gap-2 pb-10">
-            <a href="{{ route('home') }}" class="text-xl font-semibold text-center text-primary">Hello Kids</a>
+            <a href="{{ route('home') }}" class="text-xl font-semibold text-center text-primary">Sehat Ceria</a>
             <div class="text-3xl font-semibold text-center">Login</div>
         </div>
 

@@ -1,12 +1,13 @@
 <header class="sticky top-0 z-50">
     <nav id="navbar" class="flex justify-between px-20 py-4 backdrop-blur-md transition-all">
-        <a href="{{ route('dashboard') }}">
+        <a href="{{ route('home') }}">
             <div class="flex items-center justify-center gap-4">
                 <img src="{{ url('/img/logo.webp') }}" alt="Hello Kids" class="w-20">
-                <span class="text-2xl font-bold text-primary">Hello Kids</span>
+                <span class="text-2xl font-bold text-primary">Sehat Ceria</span>
             </div>
         </a>
         <div class="flex items-center justify-center gap-10 text-lg font-semibold text-primary">
+            <div><a href="{{ route('dashboard') }}">Beranda</a></div>
             <div><a href="{{ route('profile.edit') }}">Profil</a></div>
             <div><a href="{{ route('user.anak') }}">Anak</a></div>
             @if (Auth::user()->is_pregnant == 1)
@@ -14,7 +15,7 @@
             @endif
             <div><a href="{{ route('user.jenis-imun') }}">Imunisasi</a></div>
             <div><a href="{{ route('user.jadwal') }}">Jadwal</a></div>
-            <div><a href="{{ route('chatbot.index') }}">Chatbot</a></div>
+            <!-- <div><a href="{{ route('chatbot.index') }}">Chatbot</a></div> -->
         </div>
         <div class="flex items-center justify-center">
             <!-- Authentication -->

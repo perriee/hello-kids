@@ -15,7 +15,7 @@
         "laravel/framework": "^10.10",
         "laravel/sanctum": "^3.3",
         "laravel/tinker": "^2.8",
-        "maatwebsite/excel": "^3.1",
+        "maatwebsite/excel": "*",
         "psr/simple-cache": "^2.0",
         "pxlrbt/filament-excel": "^2.2"
     },

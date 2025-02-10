@@ -63,7 +63,7 @@
             <x-input-error class="mt-2" :messages="$errors->get('no_hp')" />
         </div>
 
-        {{-- No HP --}}
+        {{-- Alamat --}}
         <div class="flex flex-col gap-1">
             <x-input-label for="alamat" :value="__('Alamat')" />
             <x-text-input id="alamat" name="alamat" type="text" class="block w-full mt-1" :value="old('alamat', $user->alamat)" required autofocus autocomplete="alamat" />

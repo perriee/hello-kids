@@ -13,10 +13,9 @@
             <div class="text-6xl font-bold tracking-wide text-slate-700" data-aos="fade-right" data-aos-duration="1000">
                 Selamat Datang di
             </div>
-            <div class="font-bold tracking-wide text-7xl text-primary" data-aos="fade-right" data-aos-duration="1500">Hello
-                Kids</div>
+            <div class="font-bold tracking-wide text-7xl text-primary" data-aos="fade-right" data-aos-duration="1500">Posyandu</div>
             <div class="text-4xl font-semibold tracking-wide text-slate-500" data-aos="fade-right" data-aos-duration="2000">
-                Yogyakarta</div>
+                Sehat Ceria</div>
         </div>
         <div class="flex justify-end w-1/3" data-aos="zoom-in" data-aos-duration="2000">
             <img src="{{ url('/img/hospital.webp') }}" alt="Hospital" class="w-[80%]">
@@ -49,14 +48,14 @@
         <div class="pb-10 text-4xl font-semibold text-center text-primary" data-aos="fade-down" data-aos-duration="1000">
             Agenda</div>
         <div class="flex items-center">
-            <div class="w-2/3 text-xl leading-10 text-slate-500" data-aos="fade-left" data-aos-duration="2000">Pelaksanaan
-                Posyandu rutin dilakukan setiap bulan. Pengurus
-                posyandu
-                terdiri
-                dari 15 orang yang berasal
-                dari anggota PKK. Kader tersebut dilatih setiap bulannya oleh pihak Puskesmas. Pelaksanaan Posyandu rutin
-                dilakukan setiap bulan. Pengurus posyandu terdiri dari 15 orang yang berasal dari anggota PKK. Kader
-                tersebut dilatih setiap bulannya oleh pihak Puskesmas.</div>
+            <div class="w-2/3 text-xl leading-10 text-slate-500" data-aos="fade-left" data-aos-duration="2000"> <div>Kegiatan yang dilakukan oleh kader di Posyandu Sehat Cerita Dusun Sanggrahan RW 46 kelurahan Maguwoharjo, yaitu:</div>
+<div>1.	Pengukuran dan pencatatan tinggi badan pada anak</div>
+<div>2.	Penimbangan dan pencatatan berat badan pada balita</div>
+<div>3.	Pengukuran dan pencatatan lingkar kepala</div>
+<div>4.	Layanan pemeriksaan ibu hamil</div>
+<div>5.	Pembagian makanan bergizi seperti bubur kacang hijau pada anak</div>
+<div>6.	Penyuluhan mengenai kesehatan</div>  
+</div>
             <div class="flex justify-end w-1/3" data-aos="zoom-in" data-aos-duration="1500"><img
                     src="{{ url('/img/task.webp') }}" alt="" class="w-[20rem]">
             </div>
